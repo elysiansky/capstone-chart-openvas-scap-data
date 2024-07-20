@@ -8,7 +8,7 @@ scap-data:
   replicas: 2
   image:
     repository: elysiansky/capstone-openvas-scap-data
-    tag: 0037aa0-amd64
+    tag: a48ed64-amd64
   service:
     type: ClusterIP
   resources:
