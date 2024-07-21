@@ -4,21 +4,11 @@
 
 replicaCount: 1
 
-scap-data:
-  replicas: 2
-  image:
-    repository: elysiansky/capstone-openvas-scap-data
-    tag: 1607709-amd64
-  service:
-    type: ClusterIP
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 128Mi
-
+image:
+  repository:  elysiansky/capstone-openvas-scap-data
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: 1607709-amd64
 
 imagePullSecrets: []
 nameOverride: ""
@@ -115,3 +105,18 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+scap-data:
+  replicas: 2
+  image:
+    repository: elysiansky/capstone-openvas-scap-data
+    tag: 1607709-amd64
+  service:
+    type: ClusterIP
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
